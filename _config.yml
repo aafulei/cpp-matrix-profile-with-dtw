@@ -1,0 +1,12 @@
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - README.md
+show_downloads: true
+home_url:  https://aafulei.github.io
+
+title: Color Console
