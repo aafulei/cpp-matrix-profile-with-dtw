@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-relative-links
@@ -10,3 +11,6 @@ show_downloads: true
 home_url:  https://aafulei.github.io
 
 title: Color Console
+=======
+theme: jekyll-theme-cayman
+>>>>>>> b5c994012e85a491785dbc5c435aea2781c1dbb8
