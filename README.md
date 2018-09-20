@@ -1,16 +1,16 @@
+# Introducing Dynamic Time Warping Distance into Matrix Profile
+
 ![demo](demo/demo.gif)
 
 *A demo of code. Note how fast the optimized algorithms are, compared with brutal force. Over 95% of the entries are skipped.*
 
-## Introducing Dynamic Time Warping Distance into Matrix Profile
-
 *This repository stores the C++ code for an academic project on time series data mining.* 
 
-- For the instructions on how to compile and use the code for this project, click [here](#user-content-instructions).
+- For the instructions on how to compile and use the code for this project, click [here](#instructions).
 
-- For an abstract and emprical results of this project, click [here](#user-content-summary).
+- For an abstract and emprical results of this project, click [here](#summary).
 
-- For more information about this project, click [here](#user-content-more-information).
+- For more information about this project, click [here](#more-information).
 
 ---
 
@@ -56,6 +56,6 @@ This project was supervised by [Prof. Raymond Wong](https://www.cse.ust.hk/~rayw
 
 I am responsible for the algorithms and the code.
 
-For more of my projects, please visit [my website](https://imfl.github.io) (GitHub Pages).
+For more of my projects, please visit [my website](https://aafulei.github.io) (GitHub Pages).
 
-[Back to Top](#user-content-introducing-dynamic-time-warping-distance-into-matrix-profile)
+[Back to Top](#introducing-dynamic-time-warping-distance-into-matrix-profile)
