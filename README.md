@@ -6,7 +6,7 @@
 
 <img src="image/eu-dtw.png" width="300"/>
 
-*DTW has a keen nose for similarities, even if curves have been stretched or squeezed.*
+*DTW has a keen nose for similarities, even if curves have been stretched or squeezed. Source: XantaCross, Creative Commons.*
 
 ## Contents
 
@@ -23,7 +23,7 @@ The main challenge for introducing DTW into MP is --- the time complexity for co
 
 <img src="image/dp-dtw.png" width="300"/>
 
-*Calculating DTW involves dynamic programming.*
+*Calculating DTW involves dynamic programming. Source: Elena Tsiporkova, Dynamic Time Warping Algorithm.*
 
 My originalities are
 
