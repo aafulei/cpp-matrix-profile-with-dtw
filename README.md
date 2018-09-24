@@ -23,7 +23,7 @@ The main challenge for introducing DTW into MP is --- the time complexity for co
 
 My originalities are
 
-1. adapting lower bound functions to make them incrementally copmutable and then using them to skip many unnecessary calculations
+1. adapting lower bound functions to make them incrementally computable and using them to skip unnecessary calculations
 2. applying randomized local search within each column of the matrix to quickly arrive at the minima
 
 ## What's in the Repo
