@@ -111,13 +111,20 @@ While it takes 6.2 seconds to compute the Matrix Profile by brutal force, it tak
 
 #### variable names
 
-`t`  time series 
+`t`  time series
+
 `n`  length of entire time series data 
+
 `m`  query length of subsequence 
+
 `l`  length of Matrix Profile, which is `n – m + 1` 
+
 `f`  length of forbidden zone, where there is no need to compute 
+
 `g`  number of entries to compute (all entries in matrix except for the ones in the forbidden zone) 
+
 `r`  Sakoe-Chiba band width
+
 `e`  random engine 
 
 #### requirements
