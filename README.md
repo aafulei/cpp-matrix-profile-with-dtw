@@ -11,7 +11,7 @@
 - [how to compile](#how-to-compile)
 - [how to use](#how-to-use)
 - [a real example](#a-real-example)
-- [specifications](specifications)
+- [specifications](#specifications)
 
 ## Originalities
 
@@ -62,7 +62,7 @@ My originalities are
 
 `soi540`  the Southern Oscillation Index, related to climate change.
 
-*[All data](www2.stat.duke.edu/~mw/ts_data_sets.html)  from the Department of Statistical Science of Duke University.*
+*All data are obtained from the Department of Statistical Science of Duke University.*
 
 ## How to Compile
 
