@@ -1,35 +1,23 @@
 # Introducing Dynamic Time Warping Distance into Matrix Profile
 
-![demo](demo/demo.gif)
+*An academic project for COMP5331 Knowledge Discovery in Database (Fall 2017), a PhD-level computer science course at HKUST. Ranked # 1 among 20 groups.*
 
-*A demo of code. Note how fast the optimized algorithms are, compared with brutal force. Over 95% of the entries are skipped.*
+[Matrix Profile](https://www.cs.ucr.edu/%7Eeamonn/MatrixProfile.html) (MP) is a new concept that has the potential to revolutionize time series data mining. Traditionally, it uses the Euclidean distance to measure how similar two time series are. To enhance the robustness of similarity search, I introduced the [Dynamic Time Warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) distance into it. In doing so, I designed algorithms that greatly brought down the computational time complexity.
 
-*This repository stores the C++ code for an academic project on time series data mining.* 
+## Contents
 
-- For the instructions on how to compile and use the code for this project, click [here](#instructions).
+- [originalities](#originalities)
+- [what's in the repo](#whats-in-the-repo)
+- [how to compile](#how-to-compile)
+- [how to use](#how-to-use)
+- [a real example](#a-real-example)
+- [specifications](specifications)
 
-- For an abstract and emprical results of this project, click [here](#summary).
+## Originalities
 
-- For more information about this project, click [here](#more-information).
+The main challenge for introducing DTW into MP is --- the time complexity for computing either MP or DTW is heavy themselves, making the combination of the two very expensive.
 
----
-
-Matrix Profile (MP) has emerged as a new concept in the data mining community since 2016. It is a framework to extract information from time series, which later can be applied in similarity research. Two steps are involved:
-
-1. construct a matrix profile
-2. use the matrix profile
-
-In Step 1, the current setting uses the traditional Euclidean distance to measure how similar two subsequences are. However, a better approach would be using the Dynamic Time Warping (DTW) distance. See the graph below for intuition.
-
-![dtw](demo/dtw.png)
-
-*DTW is sharp in detecting similarity even if a curve has been stretched or squeezed.*
-
-As an initial attempt in the academic community, I introduced DTW into MP.
-
-The main challenge is --- the time complexity for computing both MP and DTW are heavy themselves, making the combination of the two intimidatingly expensive.
-
-![dtw-dp](demo/dtw-dp.png)
+<img src="image/dp-dtw.png" width="300"/>
 
 *Calculating DTW involves dynamic programming.*
 
@@ -38,24 +26,110 @@ My originalities are
 1. adapting lower bound functions and using them to skip many unnecessary computations
 2. applying randomized local search within each column of the matrix
 
-### Instructions
+## What's in the Repo
 
-The instructions on how to compile and use my code, and a full description of every source file and the dataset are [here](README.pdf) (PDF).
+#### report
 
-### Summary
+`abstract.pdf`  abstract of report
 
-An abstract of this project is [here](summary/abstract.pdf) (PDF).
+`results.pdf`  empirical results
 
-The empirical results are [here](summary/results.pdf) (PDF).
+#### source code
 
-### More Information
+`md.hpp, md.cpp`   Matrix Profile with dynamic time warping distance
 
-This project is an academic project that I did together with Lee Yik-Yeung, for [*COMP5331: Knowledge Discovery in Databases*](https://www.cse.ust.hk/~raywong/comp5331/), a PhD-level course that I took at the CS Dept. at HKUST in Fall 2017.
+`lb.hpp, lb.cpp`  lower-bound functions
 
-This project was supervised by [Prof. Raymond Wong](https://www.cse.ust.hk/~raywong/), one of the best teachers that I has ever met in my life. I would like to take this opportunity to again express my gratitude.
+`dtw.hpp, dtw.cpp`  dynamic time warping functions
 
-I am responsible for the algorithms and the code.
+`mat.hpp `  template matrix functions
 
-For more of my projects, please visit [my website](https://aafulei.github.io) (GitHub Pages).
+`pnt.hpp, pnt.cpp`  print functions 
+
+#### dataset
+
+`eeg3600`  EEG (electroencephalogram) recordings. 3,600 data points. 
+
+`eeg400`  EEG (electroencephalogram) recordings. 400 data points. 
+
+`forex1000`  daily USD/GBP exchange rates.
+
+`light1189`  10-day mean light intensity recordings from S Carinae star.
+
+`ox866`  oxygen-18 to oxygen-16 ratio in about 2.5 million years.
+
+`sea1400`  Darwin Sea level pressures (monthly), from 1882 to 1998.
+
+`soi540`  the Southern Oscillation Index, related to climate change.
+
+*[All data](www2.stat.duke.edu/~mw/ts_data_sets.html)  from the Department of Statistical Science of Duke University.*
+
+## How to Compile
+
+Download source code. Compile with a C++11 compliant compiler, *e.g.*
+
+`g++ md.cpp lb.cpp dtw.cpp pnt.cpp`
+
+## How to Use
+
+#### *command-line options*
+
+ `exec [data] [length n] [band width r] [subsequence length m / subsequence proportion mm]`
+
+#### *command-line example*
+
+*For example,* say the executable's name is `a.exe`, then run on Windows command prompt
+
+`a data/sea1400 1000 2 200 `
+
+would compute on the first `n = 1,000` data points of data `sea1400` with Sakoe-Chiba band width `r = 2`, and subsequence length `m = 200` (or subsequent proportion `mm = 0.2`).
+
+## A Real Example
+
+With executable's name `a.exe`,  run on Windows Command Prompt
+
+`a data/light1189 1000 1 0.05`
+
+will yield
+
+```
+...
+DTW Brutal Force : Time = 6.2 s 
+...
+DTW Lower Bound : Time = 0.4 s 
+# Saved = 857231 (97%) 
+... 
+```
+
+While it takes 6.2 seconds to compute the Matrix Profile by brutal force, it takes only 0.4 second to do so using the algorithm with incrementally computed lower-bound functions. 97% of the entries are skipped in calculation.
+
+## Specifications
+
+#### variable names
+
+`t`  time series 
+`n`  length of entire time series data 
+`m`  query length of subsequence 
+`l`  length of Matrix Profile, which is `n – m + 1` 
+`f`  length of forbidden zone, where there is no need to compute 
+`g`  number of entries to compute (all entries in matrix except for the ones in the forbidden zone) 
+`r`  Sakoe-Chiba band width
+`e`  random engine 
+
+#### requirements
+
+- time series data length `100 < n < 10000` 
+
+- Sakoe-Chiba band width `r in [0, m/2]`
+
+- subsequence length `m in [1, n/2]` or subsequence proportion `mm in (0, 0.5]`
+
+
+#### default values
+
+- time series data length `n = 1000 `
+- Sakoe-Chiba band width `r = 1` 
+- subsequence length `m = n/10`, or subsequence proportion `mm = 0.1` 
+- if no data file is provided, the program will generate a random time series. 
 
 [Back to Top](#introducing-dynamic-time-warping-distance-into-matrix-profile)
