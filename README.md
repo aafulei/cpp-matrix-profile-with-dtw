@@ -15,7 +15,7 @@
 
 ## Originalities
 
-The main challenge for introducing DTW into MP is --- the time complexity for computing either MP or DTW is heavy themselves, making the combination of the two very expensive.
+The main challenge for introducing DTW into MP is --- the time complexity for computing either MP or DTW is heavy in itself, making the combination of the two very expensive.
 
 <img src="image/dp-dtw.png" width="300"/>
 
@@ -23,8 +23,8 @@ The main challenge for introducing DTW into MP is --- the time complexity for co
 
 My originalities are
 
-1. adapting lower bound functions and using them to skip many unnecessary computations
-2. applying randomized local search within each column of the matrix
+1. adapting lower bound functions to make them incrementally copmutable and then using them to skip many unnecessary calculations
+2. applying randomized local search within each column of the matrix to quickly arrive at the minima
 
 ## What's in the Repo
 
