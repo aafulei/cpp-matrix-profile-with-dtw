@@ -6,12 +6,12 @@
 
 ## Contents
 
-- [originalities](#originalities)
-- [what's in the repo](#whats-in-the-repo)
-- [how to compile](#how-to-compile)
-- [how to use](#how-to-use)
-- [a real example](#a-real-example)
-- [specifications](#specifications)
+- [Originalities](#originalities)
+- [What's in The Repo](#whats-in-the-repo)
+- [How To Compile](#how-to-compile)
+- [How To Use](#how-to-use)
+- [A Real Example](#a-real-example)
+- [Specifications](#specifications)
 
 ## Originalities
 
