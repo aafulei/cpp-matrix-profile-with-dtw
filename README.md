@@ -4,6 +4,10 @@
 
 [Matrix Profile](https://www.cs.ucr.edu/%7Eeamonn/MatrixProfile.html) (MP) is a new concept that has the potential to revolutionize time series data mining. Traditionally, it uses the Euclidean distance to measure how similar two time series are. To enhance the robustness of similarity search, I introduced the [Dynamic Time Warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) distance into it. In doing so, I designed algorithms that greatly brought down the computational time complexity.
 
+<img src="image/eu-dtw.png" width="300"/>
+
+*DTW has a keen nose for similarities, even if curves have been stretched or squeezed.*
+
 ## Contents
 
 - [Originalities](#originalities)
