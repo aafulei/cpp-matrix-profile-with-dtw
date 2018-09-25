@@ -82,13 +82,17 @@ Download source code. Compile with a C++11 compliant compiler, *e.g.*
 
 #### *command-line options*
 
- `exec [data] [length n] [band width r] [subsequence length m / subsequence proportion mm]`
+```powershell
+> exec [data] [length n] [band width r] [subsequence length m / subsequence proportion mm]
+```
 
 #### *command-line example*
 
 *For example,* say the executable's name is `a.exe`, then run on Windows command prompt
 
-`> a dat/sea1400 1000 2 200 `
+```powershell
+> a dat/sea1400 1000 2 200
+```
 
 would compute on the first `n = 1,000` data points of data `sea1400` with Sakoe-Chiba band width `r = 2`, and subsequence length `m = 200` (or subsequent proportion `mm = 0.2`).
 
@@ -96,7 +100,9 @@ would compute on the first `n = 1,000` data points of data `sea1400` with Sakoe-
 
 With executable's name `a.exe`,  run on Windows Command Prompt
 
-`> a dat/light1189 1000 1 0.05`
+```powershell
+> a dat/light1189 1000 1 0.05
+```
 
 will yield
 
