@@ -4,7 +4,7 @@
 
 [Matrix Profile](https://www.cs.ucr.edu/%7Eeamonn/MatrixProfile.html) (MP) is a new concept that has the potential to revolutionize time series data mining. Traditionally, it uses the Euclidean distance to measure how similar two time series are. To enhance the robustness of similarity search, I introduced the [Dynamic Time Warping](https://en.wikipedia.org/wiki/Dynamic_time_warping) (DTW) distance into it. In doing so, I designed algorithms that greatly brought down the computational time complexity.
 
-<img src="image/eu-dtw.png" width="300"/>
+<img src="img/eu-dtw.png" width="300"/>
 
 *DTW has a keen nose for similarities, even if curves have been stretched or squeezed. Source: XantaCross, Creative Commons.*
 
@@ -21,7 +21,7 @@
 
 The main challenge for introducing DTW into MP is --- the time complexity for computing either MP or DTW is heavy in itself, making the combination of the two very expensive.
 
-<img src="image/dp-dtw.png" width="300"/>
+<img src="img/dp-dtw.png" width="300"/>
 
 *Calculating DTW involves dynamic programming. Source: Elena Tsiporkova, Dynamic Time Warping Algorithm.*
 
@@ -32,13 +32,13 @@ My originalities are
 
 ## What's in the Repo
 
-#### report
+#### report `/rpt`
 
 `abstract.pdf`  abstract of report
 
 `results.pdf`  empirical results
 
-#### source code
+#### source code `/src`
 
 `md.hpp, md.cpp`   Matrix Profile with dynamic time warping distance
 
@@ -50,7 +50,7 @@ My originalities are
 
 `pnt.hpp, pnt.cpp`  print functions 
 
-#### dataset
+#### dataset `/dat`
 
 `eeg3600`  EEG (electroencephalogram) recordings. 3,600 data points. 
 
@@ -72,7 +72,11 @@ My originalities are
 
 Download source code. Compile with a C++11 compliant compiler, *e.g.*
 
-`g++ md.cpp lb.cpp dtw.cpp pnt.cpp`
+```powershell
+cd src
+g++ md.cpp lb.cpp dtw.cpp pnt.cpp -o ../a.exe -std=c++11
+cd ..
+```
 
 ## How to Use
 
@@ -84,7 +88,7 @@ Download source code. Compile with a C++11 compliant compiler, *e.g.*
 
 *For example,* say the executable's name is `a.exe`, then run on Windows command prompt
 
-`a data/sea1400 1000 2 200 `
+`a dat/sea1400 1000 2 200 `
 
 would compute on the first `n = 1,000` data points of data `sea1400` with Sakoe-Chiba band width `r = 2`, and subsequence length `m = 200` (or subsequent proportion `mm = 0.2`).
 
@@ -92,7 +96,7 @@ would compute on the first `n = 1,000` data points of data `sea1400` with Sakoe-
 
 With executable's name `a.exe`,  run on Windows Command Prompt
 
-`a data/light1189 1000 1 0.05`
+`a dat/light1189 1000 1 0.05`
 
 will yield
 
