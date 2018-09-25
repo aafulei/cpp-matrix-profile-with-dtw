@@ -73,9 +73,9 @@ My originalities are
 Download source code. Compile with a C++11 compliant compiler, *e.g.*
 
 ```powershell
-cd src
-g++ md.cpp lb.cpp dtw.cpp pnt.cpp -o ../a.exe -std=c++11
-cd ..
+> cd src
+> g++ md.cpp lb.cpp dtw.cpp pnt.cpp -o ../a.exe -std=c++11
+> cd ..
 ```
 
 ## How to Use
